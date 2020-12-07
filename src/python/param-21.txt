@@ -1,0 +1,19 @@
+DIMENSION 10                            # number of variables
+
+BB_EXE "$python problem-21.py"          # is the python script to be
+                                        # invoked by NOMAD
+BB_INPUT_TYPE ( R R R R R I I I I I )   # `x` variable is (R)eal
+                                        # `u` variable is (I)ntegral
+
+BB_OUTPUT_TYPE OBJ PB PB PB             # all outputs can be progressive
+                                        # we just need a final solution
+                                        # to be feasible
+
+X0 0-4 0.01                             # ahhhh
+X0 5-9 1                                # feasible starting point
+
+LOWER_BOUND 0-4 0.000001                # x >= 0 (actually)
+LOWER_BOUND 5-9 1                       # u >= 1
+
+UPPER_BOUND 0-4 0.999999                # x <= 10 - 1e-6
+UPPER_BOUND 5-9 10                      # u <= 10
