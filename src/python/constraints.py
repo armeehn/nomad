@@ -4,10 +4,10 @@ from helpers import trexp
 
 # Constraints used in all of the problems
 
-def c1(p, u, P):
+def c1(p, u, P, **kwargs):
     return (p * u ** 2).sum() - P
 
-def c2(x, u, t, C, T):
+def c2(x, u, T, C, **kwargs):
 
     '''
         Here we use a surrogate for exp(x/4) using
@@ -20,11 +20,11 @@ def c2(x, u, t, C, T):
     '''
 
     # (C)ost (R)eliability (R)elation function
-    def crr(x):
+    def crr(x, t, **kwargs):
         # $\alpha_i * (-t / log(x_i))^beta_i \forall i$
         return (T['alpha-e5'] / 1e5) * (-t / np.log(x)) ** T['beta']
 
-    return (crr(x) * (u + trexp(u / 4))).sum() - C
+    return (crr(x, **kwargs) * (u + trexp(u / 4))).sum() - C
 
-def c3(w, u, W):
+def c3(w, u, W, **kwargs):
     return (w * u * trexp(u / 4)).sum() - W

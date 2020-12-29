@@ -32,7 +32,6 @@ P = 180     # Reliability parameter
 W = 100     # Not sure what this is...
 
 T = pd.DataFrame(columns = ['alpha-e5', 'p', 'w', 'beta'])
-
 T['alpha-e5'] = [2.5, 1.450, 0.541, 0.541, 2.1]
 T['p'] = [2, 4, 5, 8, 4]
 T['w'] = [3.5, 4.0, 4.0, 3.5, 4.5]
