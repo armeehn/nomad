@@ -1,5 +1,5 @@
 # nomad
-Public repository for the course project in MATH 562 (Derivative-Free Optimization) @ UBC through course textbook [1]
+Public repository for the course project in MATH 562 (Derivative-Free Optimization) @ UBC through the course textbook [1]
 
 ## Project description
 In this project, we explore the NOMAD software framework developed at GERAD. This exploration is done via the usage of surrogates functions.
