@@ -8,7 +8,7 @@ def trexp(x, N=3):
         Truncation of the exponential function
         using a boolean-like mask
     '''
-    
+
     b = np.zeros(4)
     b[:N] = 1.
     summands = np.array([   1,
